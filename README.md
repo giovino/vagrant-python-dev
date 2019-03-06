@@ -6,6 +6,17 @@ Vagrant configuration using Ubuntu 18.04, pyenv, poetry and virtual environments
 
 ## Vagrant
 
+1.  Clone the repository
+    ```
+    $ git clone https://github.com/giovino/vagrant-python-dev.git
+    ```
+1.  Run vagrant up
+    ```
+    $ cd vagrant-python-dev
+    $ vagrant up
+    $ vagrant ssh
+    ```
+
 ## pyenv
 
 [pyenv](https://github.com/pyenv/pyenv) lets you easily switch between multiple versions of Python. pyenv is initially installed and configured in `bootstrap.sh`.
@@ -14,33 +25,41 @@ Vagrant configuration using Ubuntu 18.04, pyenv, poetry and virtual environments
 
 [python-virtualenv](https://github.com/pyenv/pyenv-virtualenv) a pyenv plugin to manage virtualenv
 
-1.  Create the project directory named project-fun
+1.  Create a project directory
     ```
-    $ mkdir project-fun
+    $ mkdir pyenv-demo
     ```
 1.  Create a virtual environment for
     ```
-    $ pyenv virtualenv 3.7.2 project-fun
+    $ pyenv virtualenv 3.7.2 pyenv-demo
     ```
 1.  Active the virtual environment
     ```
-    $ cd project-fun
-    $ pyenv local project-fun
+    $ cd pyenv-demo
+    $ pyenv local pyenv-demo
     ```
 1.  Artifacts of the active virtual environment
     ```
     # Seen in prompt
-    (project-fun) vagrant@vagrant:~/project-fun$
+    (pyenv-demo) vagrant@vagrant:~/pyenv-demo$
 
     $ cat .python-version
-    project-fun
+    pyenv-demo
 
     $ pyenv which pip
-    /home/vagrant/.pyenv/versions/project-fun/bin/pip
+    /home/vagrant/.pyenv/versions/pyenv-demo/bin/pip
+    ```
+1.  Upgrade / install pip setuptools wheel
+    ```
+    $ pip install --upgrade pip setuptools wheel
+    ```
+1.  Install Python development tools
+    ```
+    $ pip install pylint flake8 black pytest ipython
     ```
 1.  Deactivate the virtual environment
     ```
-    # Prompt will change
+    # Change to a different directory (prompt will change)
     $ cd
 
     # Change to default 3.7.2
@@ -49,7 +68,7 @@ Vagrant configuration using Ubuntu 18.04, pyenv, poetry and virtual environments
 
 ## Poetry
 
-[poetry](https://poetry.eustace.io/) Python packaging and dependency management made easy. poetry supports [pyenv and virtualenvs](https://poetry.eustace.io/docs/basic-usage/#poetry-and-virtualenvs)
+[poetry](https://poetry.eustace.io/) helps you declare, manage and install dependencies of Python projects, ensuring you have the right stack everywhere. poetry supports [pyenv and virtualenvs](https://poetry.eustace.io/docs/basic-usage/#poetry-and-virtualenvs)
 
 ### Using Poetry created virtual environments
 
@@ -157,10 +176,6 @@ Vagrant configuration using Ubuntu 18.04, pyenv, poetry and virtual environments
     ```
     $ pip install pylint flake8 black pytest ipython
     ```
-
-
-
-## PyCharm
 
 ## Resources
 
