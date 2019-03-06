@@ -42,16 +42,6 @@ echo "Install and configure Python 3.7.2 as default"
 
 
 ###
-echo "Upgrade and install pip setuptools wheel"
-/home/vagrant/.pyenv/shims/pip install --upgrade pip setuptools wheel
-
-
-###
-echo "Install Python development tools"
-/home/vagrant/.pyenv/shims/pip install pylint flake8 black pytest ipython
-
-
-###
 echo "Install Poetry"
 curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py -o ~/downloads/get-poetry.py
 /home/vagrant/.pyenv/shims/python3 ~/downloads/get-poetry.py

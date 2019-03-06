@@ -61,9 +61,6 @@ Vagrant configuration using Ubuntu 18.04, pyenv, poetry and virtual environments
     ```
     # Change to a different directory (prompt will change)
     $ cd
-
-    # Change to default 3.7.2
-    $ pyenv local 3.7.2
     ```
 
 ## Poetry
@@ -78,6 +75,7 @@ Vagrant configuration using Ubuntu 18.04, pyenv, poetry and virtual environments
     ```
 1.  Add Python requests module
     ```
+    $ cd poetry-demo-1
     $ poetry add requests
     Creating virtualenv poetry-demo-1-py3.7 in /home/vagrant/.cache/pypoetry/virtualenvs
     Using version ^2.21 for requests
@@ -112,14 +110,18 @@ Vagrant configuration using Ubuntu 18.04, pyenv, poetry and virtual environments
      * OS:       posix
      * Python:   /home/vagrant/.pyenv/versions/3.7.2
     ```
-    1.  Upgrade / install pip setuptools wheel
-        ```
-        $ pip install --upgrade pip setuptools wheel
-        ```
-    1.  Install Python development tools
-        ```
-        $ pip install pylint flake8 black pytest ipython
-        ```
+1.  Upgrade / install pip setuptools wheel
+    ```
+    $ pip install --upgrade pip setuptools wheel
+    ```
+1.  Install Python development tools
+    ```
+    $ pip install pylint flake8 black pytest ipython
+    ```
+1.  Exit poetry shell
+    ```
+    $ exit
+    ```
 
 ### Using pyenv created virtual environments
 
