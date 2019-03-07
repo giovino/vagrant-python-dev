@@ -138,3 +138,5 @@ Vagrant configuration using Ubuntu 18.04, pyenv, poetry and virtual environments
 4.  [Pyenv – Python Version Management Made Easier](https://www.ostechnix.com/pyenv-python-version-management-made-easier/)
 5.  [Python 3 Installation & Setup Guide](https://realpython.com/installing-python/#compiling-python-from-source)
 6.  [My Python Development Environment, 2018 Edition](https://jacobian.org/2018/feb/21/python-environment-2018/)
+7.  [PyPI packages not in the standard library](https://stackoverflow.com/questions/41573587/what-is-the-difference-between-venv-pyvenv-pyenv-virtualenv-virtualenvwrappe/41573588#41573588)
+8.  [venv — Creation of virtual environments](https://docs.python.org/3/library/venv.html)
