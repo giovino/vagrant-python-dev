@@ -33,7 +33,7 @@ Vagrant configuration using Ubuntu 18.04, pyenv, poetry and virtual environments
     ```
     $ pyenv virtualenv 3.7.2 pyenv-demo
     ```
-1.  Active the virtual environment
+1.  Activate the virtual environment
     ```
     $ cd pyenv-demo
     $ pyenv local pyenv-demo
@@ -82,7 +82,7 @@ Vagrant configuration using Ubuntu 18.04, pyenv, poetry and virtual environments
     ```
     $ pyenv virtualenv 3.7.2 poetry-demo
     ```
-1.  Active the virtual environment
+1.  Activate the virtual environment
     ```
     $ cd poetry-demo
     $ pyenv local poetry-demo
