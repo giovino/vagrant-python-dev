@@ -62,28 +62,38 @@ Vagrant configuration using Ubuntu 18.04, pyenv, poetry and virtual environments
     # Change to a different directory (prompt will change)
     $ cd
     ```
+1.  List all Python versions available to pyenv
+    ```
+    $ pyenv versions
+    ```
 
 ## Poetry
 
 [poetry](https://poetry.eustace.io/) helps you declare, manage and install dependencies of Python projects, ensuring you have the right stack everywhere. poetry supports [pyenv and virtualenvs](https://poetry.eustace.io/docs/basic-usage/#poetry-and-virtualenvs)
 
-### Using Poetry created virtual environments
+### Using pyenv created virtual environments
 
 1.  Create a new project
     ```
-    $ poetry new poetry-demo-1
+    $ poetry new poetry-demo
+    Created package poetry-demo in poetry-demo
     ```
-1.  Add Python requests module
+2.  Create a new pyenv virtual environment
     ```
-    $ cd poetry-demo-1
-    $ poetry add requests
-    Creating virtualenv poetry-demo-1-py3.7 in /home/vagrant/.cache/pypoetry/virtualenvs
-    Using version ^2.21 for requests
-    ...
+    $ pyenv virtualenv 3.7.2 poetry-demo
     ```
-1.  Spawn shell within virtual environment
+1.  Active the virtual environment
     ```
-    $ poetry shell
+    $ cd poetry-demo
+    $ pyenv local poetry-demo
+    ```
+1.  Upgrade / install pip setuptools wheel
+    ```
+    $ pip install --upgrade pip setuptools wheel
+    ```
+1.  Install Python development tools
+    ```
+    $ pip install pylint flake8 black pytest ipython
     ```
 1.  Show poetry debug info
     ```
@@ -100,7 +110,7 @@ Vagrant configuration using Ubuntu 18.04, pyenv, poetry and virtual environments
 
      * Python:         3.7.2
      * Implementation: CPython
-     * Path:           /home/vagrant/.cache/pypoetry/virtualenvs/poetry-demo-1-py3.7
+     * Path:           /home/vagrant/.pyenv/versions/3.7.2/envs/poetry-demo
      * Valid:          True
 
     System
@@ -110,73 +120,14 @@ Vagrant configuration using Ubuntu 18.04, pyenv, poetry and virtual environments
      * OS:       posix
      * Python:   /home/vagrant/.pyenv/versions/3.7.2
     ```
-1.  Upgrade / install pip setuptools wheel
+1.  Deactivate the virtual environment
     ```
-    $ pip install --upgrade pip setuptools wheel
+    # Change to a different directory (prompt will change)
+    $ cd
     ```
-1.  Install Python development tools
+1.  List all Python versions available to pyenv
     ```
-    $ pip install pylint flake8 black pytest ipython
-    ```
-1.  Exit poetry shell
-    ```
-    $ exit
-    ```
-
-### Using pyenv created virtual environments
-
-1.  Create a new project
-    ```
-    $ poetry new poetry-demo-2
-    Created package poetry-demo-2 in poetry-demo-2
-    ```
-2.  Create a new pyenv virtual environment
-    ```
-    $ pyenv virtualenv 3.7.2 poetry-demo-2
-    ```
-1.  Active the virtual environment
-    ```
-    $ cd poetry-demo-2
-    $ pyenv local poetry-demo-2
-    ```
-1.  Add Python requests module
-    ```
-    $ poetry add requests
-    Using version ^2.21 for requests
-    ...
-    ```
-1.  Show poetry debug info
-    ```
-    poetry debug:info
-
-    Poetry
-    ======
-
-     * Version: 0.12.11
-     * Python:  3.7.2
-
-    Virtualenv
-    ==========
-
-     * Python:         3.7.2
-     * Implementation: CPython
-     * Path:           /home/vagrant/.pyenv/versions/3.7.2/envs/poetry-demo-2
-     * Valid:          True
-
-    System
-    ======
-
-     * Platform: linux
-     * OS:       posix
-     * Python:   /home/vagrant/.pyenv/versions/3.7.2
-    ```
-1.  Upgrade / install pip setuptools wheel
-    ```
-    $ pip install --upgrade pip setuptools wheel
-    ```
-1.  Install Python development tools
-    ```
-    $ pip install pylint flake8 black pytest ipython
+    $ pyenv versions
     ```
 
 ## Resources
