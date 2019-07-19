@@ -31,7 +31,7 @@ Vagrant configuration using Ubuntu 18.04, pyenv, poetry and virtual environments
     ```
 1.  Create a virtual environment for
     ```
-    $ pyenv virtualenv 3.7.2 pyenv-demo
+    $ pyenv virtualenv 3.7.4 pyenv-demo
     ```
 1.  Activate the virtual environment
     ```
@@ -80,7 +80,7 @@ Vagrant configuration using Ubuntu 18.04, pyenv, poetry and virtual environments
     ```
 2.  Create a new pyenv virtual environment
     ```
-    $ pyenv virtualenv 3.7.2 poetry-demo
+    $ pyenv virtualenv 3.7.4 poetry-demo
     ```
 1.  Activate the virtual environment
     ```
@@ -103,12 +103,12 @@ Vagrant configuration using Ubuntu 18.04, pyenv, poetry and virtual environments
     ======
 
      * Version: 0.12.11
-     * Python:  3.7.2
+     * Python:  3.7.4
 
     Virtualenv
     ==========
 
-     * Python:         3.7.2
+     * Python:         3.7.4
      * Implementation: CPython
      * Path:           /home/vagrant/.pyenv/versions/3.7.2/envs/poetry-demo
      * Valid:          True
@@ -118,7 +118,7 @@ Vagrant configuration using Ubuntu 18.04, pyenv, poetry and virtual environments
 
      * Platform: linux
      * OS:       posix
-     * Python:   /home/vagrant/.pyenv/versions/3.7.2
+     * Python:   /home/vagrant/.pyenv/versions/3.7.4
     ```
 1.  Deactivate the virtual environment
     ```

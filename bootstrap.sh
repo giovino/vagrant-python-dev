@@ -36,9 +36,9 @@ source /home/vagrant/.bashrc
 
 
 ###
-echo "Install and configure Python 3.7.2 as default"
-/home/vagrant/.pyenv/bin/pyenv install 3.7.2
-/home/vagrant/.pyenv/bin/pyenv global 3.7.2
+echo "Install and configure Python 3.7.4 as default"
+/home/vagrant/.pyenv/bin/pyenv install 3.7.4
+/home/vagrant/.pyenv/bin/pyenv global 3.7.4
 
 
 ###
@@ -48,5 +48,13 @@ curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.p
 
 
 ###
-echo "Restarting"
-sudo reboot
+echo "Update paths"
+cat << EOF | tee --append /home/vagrant/.bashrc
+export PATH="/home/vagrant/.local/bin:\$PATH"
+export PYTHONPATH=:/vagrant
+EOF
+
+
+###
+echo "Upgrade pip and setuptools"
+/home/vagrant/.pyenv/shims/pip install --upgrade pip setuptools
